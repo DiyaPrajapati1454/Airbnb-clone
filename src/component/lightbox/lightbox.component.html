@@ -1,0 +1,45 @@
+<div class="lightbox">
+
+  <!-- Close button -->
+  <button
+    class="close-button"
+    type="button"
+    (click)="closeLightbox()"
+    aria-label="Close">
+    ×
+  </button>
+
+  <!-- Photo counter -->
+  <div class="photo-counter">
+    {{ currentPhotoNumber }} / {{ photos.length }}
+  </div>
+
+  <!-- Previous button -->
+  <button
+    class="navigation-button previous-button"
+    type="button"
+    (click)="previousPhoto()"
+    [disabled]="currentIndex === 0"
+    aria-label="Previous photo">
+    ‹
+  </button>
+
+  <!-- Main photo -->
+  <div class="photo-container">
+    <img
+      [src]="currentPhoto"
+      alt="Property photo"
+      class="lightbox-image">
+  </div>
+
+  <!-- Next button -->
+  <button
+    class="navigation-button next-button"
+    type="button"
+    (click)="nextPhoto()"
+    [disabled]="currentIndex === photos.length - 1"
+    aria-label="Next photo">
+    ›
+  </button>
+
+</div>
