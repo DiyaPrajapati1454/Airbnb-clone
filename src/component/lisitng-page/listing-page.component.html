@@ -1,0 +1,212 @@
+<main class="listing-page">
+
+  <div class="listing-container">
+
+    <!-- Property Header -->
+
+    <section class="property-header">
+
+      <div>
+        <h1>{{ property.name }}</h1>
+
+        <div class="property-meta">
+
+          <span class="rating">
+            ★ {{ property.rating }}
+          </span>
+
+          <span>
+            {{ property.reviewCount }} reviews
+          </span>
+
+          <span>·</span>
+
+          <span>
+            {{ property.location }}
+          </span>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Image Gallery -->
+
+    <section class="image-gallery">
+
+      <div class="main-image"
+      [routerLink]="['/photo-tour']">
+        <img
+          [src]="property.images[0]"
+          [alt]="property.name"
+        />
+      </div>
+
+      <div class="small-images"
+      [routerLink]="['/photo-tour']">
+
+        @for (image of property.images.slice(1); track image) {
+
+          <div class="gallery-image">
+
+            <img
+              [src]="image"
+              [alt]="property.name"
+            />
+
+          </div>
+
+        }
+
+      </div>
+
+    </section>
+
+
+    <!-- Property Content -->
+
+    <section class="property-content">
+
+      <div class="property-information">
+
+        <div class="property-introduction">
+
+          <h2>
+            {{ property.propertyType }} in {{ property.location }}
+          </h2>
+
+          <p class="basic-details">
+            {{ property.guests }} guests ·
+            {{ property.bedrooms }} bedrooms ·
+            {{ property.bathrooms }} bathrooms
+          </p>
+
+        </div>
+
+
+        <!-- Property Details -->
+
+        <div class="details-section">
+
+          <h2>About this property</h2>
+
+          <p>
+            {{ property.description }}
+          </p>
+
+        </div>
+
+
+        <!-- Basic Features -->
+
+        <div class="features-section">
+
+          <h2>Property details</h2>
+
+          <div class="features">
+
+            <div class="feature">
+              <span class="feature-icon">🛏</span>
+
+              <div>
+                <strong>{{ property.bedrooms }}</strong>
+                <span> Bedrooms</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <span class="feature-icon">🛁</span>
+
+              <div>
+                <strong>{{ property.bathrooms }}</strong>
+                <span> Bathrooms</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <span class="feature-icon">👥</span>
+
+              <div>
+                <strong>{{ property.guests }}</strong>
+                <span> Guests</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <span class="feature-icon">📍</span>
+
+              <div>
+                <strong>Great</strong>
+                <span> Location</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Reviews -->
+
+        <div class="reviews-section">
+
+          <h2>
+            ★ {{ property.rating }}
+            <span>· {{ property.reviewCount }} reviews</span>
+          </h2>
+
+          <div class="reviews">
+
+            @for (review of property.reviews; track review.name) {
+
+              <div class="review">
+
+                <div class="review-header">
+
+                  <strong>{{ review.name }}</strong>
+
+                  <span>
+                    ★ {{ review.rating }}
+                  </span>
+
+                </div>
+
+                <p>
+                  {{ review.comment }}
+                </p>
+
+              </div>
+
+            }
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Booking -->
+
+      <aside class="booking-section">
+
+        <div class="price">
+
+          <strong>
+            ₹{{ property.price | number }}
+          </strong>
+
+          <span> / night</span>
+
+        </div>
+
+        <app-booking-form></app-booking-form>
+
+      </aside>
+
+    </section>
+
+  </div>
+
+</main>

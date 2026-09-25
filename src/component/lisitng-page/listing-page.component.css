@@ -1,0 +1,347 @@
+.listing-page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.listing-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 35px 24px 60px;
+}
+
+
+/* -------------------------
+   Property Header
+------------------------- */
+
+.property-header {
+  margin-bottom: 24px;
+}
+
+.property-header h1 {
+  margin: 0 0 10px;
+
+  font-size: 32px;
+  font-weight: 650;
+
+  color: #222222;
+}
+
+.property-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  font-size: 14px;
+  color: #555555;
+}
+
+.rating {
+  color: #222222;
+  font-weight: 600;
+}
+
+
+/* -------------------------
+   Image Gallery
+------------------------- */
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 8px;
+
+  height: 440px;
+
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.main-image {
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.small-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.gallery-image {
+  overflow: hidden;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.3s ease;
+}
+
+.gallery-image img:hover {
+  transform: scale(1.03);
+}
+
+
+/* -------------------------
+   Content
+------------------------- */
+
+.property-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 55px;
+
+  margin-top: 40px;
+}
+
+.property-information {
+  min-width: 0;
+}
+
+.property-introduction {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.property-introduction h2 {
+  margin: 0 0 8px;
+
+  font-size: 22px;
+  color: #222222;
+}
+
+.basic-details {
+  margin: 0;
+
+  color: #666666;
+  font-size: 15px;
+}
+
+
+/* -------------------------
+   About
+------------------------- */
+
+.details-section {
+  padding: 28px 0;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.details-section h2,
+.features-section h2 {
+  margin: 0 0 15px;
+
+  font-size: 21px;
+  color: #222222;
+}
+
+.details-section p {
+  margin: 0;
+
+  color: #555555;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* -------------------------
+   Features
+------------------------- */
+
+.features-section {
+  padding: 28px 0;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  color: #555555;
+  font-size: 14px;
+}
+
+.feature-icon {
+  font-size: 23px;
+}
+
+.feature strong {
+  color: #222222;
+}
+
+
+/* -------------------------
+   Reviews
+------------------------- */
+
+.reviews-section {
+  padding: 28px 0;
+}
+
+.reviews-section h2 {
+  margin: 0 0 22px;
+
+  font-size: 21px;
+  color: #222222;
+}
+
+.reviews-section h2 span {
+  font-size: 15px;
+  font-weight: 400;
+  color: #555555;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.review {
+  padding: 18px;
+
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  margin-bottom: 10px;
+}
+
+.review-header strong {
+  color: #222222;
+}
+
+.review-header span {
+  font-size: 14px;
+}
+
+.review p {
+  margin: 0;
+
+  color: #555555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* -------------------------
+   Booking
+------------------------- */
+
+.booking-section {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.price {
+  margin-bottom: 15px;
+
+  font-size: 15px;
+  color: #555555;
+}
+
+.price strong {
+  font-size: 24px;
+  color: #222222;
+}
+
+
+/* -------------------------
+   Responsive
+------------------------- */
+
+@media (max-width: 900px) {
+
+  .property-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .booking-section {
+    position: static;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .listing-container {
+    padding: 25px 16px 45px;
+  }
+
+  .property-header h1 {
+    font-size: 26px;
+  }
+
+  .image-gallery {
+    grid-template-columns: 1fr;
+    height: 350px;
+  }
+
+  .main-image {
+    height: 350px;
+  }
+
+  .small-images {
+    display: none;
+  }
+
+  .reviews {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 450px) {
+
+  .property-header h1 {
+    font-size: 23px;
+  }
+
+  .image-gallery {
+    height: 280px;
+  }
+
+  .main-image {
+    height: 280px;
+  }
+
+}
