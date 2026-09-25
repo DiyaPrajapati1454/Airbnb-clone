@@ -1,0 +1,101 @@
+.booking-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.booking-header h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  color: #222222;
+}
+
+.booking-header p {
+  margin: 0 0 22px;
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 13px;
+
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #555555;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+
+  padding: 13px;
+
+  background: #222222;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #444444;
+}
+
+button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.success-message {
+  margin-top: 18px;
+  padding: 12px;
+
+  background: #f1f8f3;
+  border: 1px solid #c8e6d0;
+  border-radius: 8px;
+
+  color: #276738;
+  font-size: 14px;
+}
+
+@media (max-width: 500px) {
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+}
