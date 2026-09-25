@@ -1,0 +1,72 @@
+@if (isLightboxOpen) {
+
+  <app-lightbox
+    [photos]="allPhotos"
+    [currentIndex]="selectedPhotoIndex"
+    (close)="closeLightbox()">
+  </app-lightbox>
+
+}
+
+<div class="photo-tour">
+
+  <header class="tour-header">
+
+    <button
+      class="back-button"
+      routerLink="/"
+      aria-label="Back to listing"
+    >
+      ←
+    </button>
+
+    <h1>Photo tour</h1>
+
+  </header>
+
+
+  <nav class="category-nav">
+
+    <button
+      *ngFor="let category of photoCategories"
+      type="button"
+      (click)="scrollToCategory(category.id)"
+    >
+      {{ category.name }}
+    </button>
+
+  </nav>
+
+
+  <main class="photo-sections">
+
+    <section
+      *ngFor="let category of photoCategories"
+      [id]="category.id"
+      class="photo-section"
+    >
+
+      <h2>{{ category.name }}</h2>
+
+      <div class="photo-grid">
+
+        <div
+          class="photo-item"
+          *ngFor="let image of category.images"
+          (click)="openLightbox(image)"
+        >
+
+          <img
+            [src]="image"
+            [alt]="category.name + ' photo'"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
